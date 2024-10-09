@@ -90,10 +90,11 @@
     color: #dcdedb;
     line-height: 100%;
     width: auto;
+    padding-right: 20px;
 }
 
 .taura-servico-title h3 {
-    font-size: calc(26px + (36 - 26) * ((100vw - 460px) / (1920 - 460)));
+    font-size: calc(24px + (36 - 24) * ((100vw - 460px) / (1920 - 460)));
     width: auto;
     padding: 10px 0 0 10px;
 }
@@ -352,10 +353,38 @@
 
 
 
+/* ***** CASE-DETALHE */
+.taura-project-img-galery {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0;
+}
+
+.taura-project-img-galery .img-item {
+    border: 1px solid var(--title-color);
+    width: 31.3333%;
+}
+.taura-project-img-galery .img-item.fullW {
+    width: 100%;
+}
+.taura-project-img-galery .img-item:nth-child(2) {
+    margin: 0 2%;
+}
+
+.taura-project-img-galery .img-item img {
+    width: 100%;
+}
+
+.taura-project-img-galery .img-item.fullW iframe {
+    float: left;
+}
+
+
 
 /* ***** BLOG */
 .breadcumb-wrapper.style2 {
     text-align: center;
+    background-color: #fff;
     /* margin-top: 0; */
 }
 
