@@ -70,8 +70,43 @@
         font-size: 12px;
     }
 }
+@media (max-width: 991px) {
+    .header-layout1 .sticky-wrapper {
+        padding: inherit;
+    }
+}
 
 
+/* --------- menu idiomas boline */
+.mobile-lang ul {
+    list-style: none;
+    padding: 0 0 30px 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    border-bottom: 2px solid var(--title-color);
+}
+.mobile-lang ul li {
+    text-align: center;
+
+    box-sizing: border-box;
+    width: 50%;
+    padding: 5px;
+}
+.mobile-lang ul li a {
+    color: var(--title-color);
+    
+    border: 2px solid var(--title-color);
+    display: block;
+}
+.mobile-lang ul li a.select {
+    color: var(--smoke-color);
+    background-color: var(--title-color);
+}
+
+
+.mobile-menu ul li a.btn {
+    color: var(--smoke-color);
+}
 
 
 
