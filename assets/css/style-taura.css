@@ -2,8 +2,10 @@
     --theme-color: #75ccd2;
     --smoke-color: #e9eaeb;
 
-    --taura-metod-padg: 3%;
+    /* --taura-metod-padg: 3%; */
 }
+
+/* * { outline: 4px solid rgba(255, 0, 190, 0.4); border-radius: 4px; } */
 
 
 /* ***** MAIN HEADER */
@@ -19,10 +21,11 @@
     gap: 5px;
 }
 .select-lang a {
-    font-family: "Unbounded", sans-serif;
+    font-family: var(--title-font);
     font-size: 12px;
     line-height: 16px;
     color: var(--title-color);
+    
     box-sizing: border-box;
     padding: 3px;
     border: 1px solid var(--title-color);
@@ -74,93 +77,114 @@
 
 
 /* ***** Serviços Area */
-.taura-servico {
+.taura-list-item {
     justify-content: space-between;
 }
-
-
-.taura-servico-title {
-    display: flex;
+.taura-list-item:not(:last-child) {
+    padding-bottom: 90px;
 }
 
-.taura-servico-title span {
-    font-family: "Unbounded", sans-serif;
+.taura-list-cel:nth-child(1) {
+    display: flex;
+    gap: 20px;
+}
+.taura-list-cel:nth-child(1) span {
+    font-family: var(--title-font);
     font-weight: 40;
+    /* font-size: 110px; */
     font-size: calc(45px + (120 - 45) * ((100vw - 460px) / (1920 - 460)));
     color: #dcdedb;
+    letter-spacing: -10px;
     line-height: 100%;
-    width: auto;
-    padding-right: 20px;
-}
 
-.taura-servico-title h3 {
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+.taura-list-cel:nth-child(1) h3 {
+    /* font-size: 40px; */
     font-size: calc(24px + (36 - 24) * ((100vw - 460px) / (1920 - 460)));
+
     width: auto;
     padding: 10px 0 0 10px;
 }
 
-
-
-.taura-servico-cont p {
-    padding-bottom: 20px;
-}
-
-.taura-servico-list ul {
-    list-style-type: "+";
+.taura-ul {
+    padding: 0;
     margin: 0;
 }
-.taura-servico-list li {
+.taura-ul ul {
+    list-style: none;
+    display: block;
+    padding: 0 10px 0 0;
+    margin: 0;
+}
+.taura-ul li a {
+    font-family: var(--title-font);
     font-weight: 600;
     color: var(--title-color);
-    padding-left: 10px;
+
+    box-sizing: border-box;
+    display: block;
 }
-.taura-servico-list li:not(:last-child) {
-    padding-bottom: 10px;
+.taura-ul li a:before {
+    content: "+";
+    margin-right: 10px;
 }
-.taura-servico-list li a {
-    color: var(--title-color);
-}
-.taura-servico-list li:hover,
-.taura-servico-list li:hover a {
-    color: var(--theme-color) !important;
+.taura-ul li a:focus,
+.taura-ul li a:hover {
+    color: var(--theme-color);
 }
 
-
-
-.taura-servico-arrow a {
+.taura-link-box {
     display: inline-block;
     border: 3px solid black;
 }
-.taura-servico-arrow a svg {
+.taura-link-box svg {
     width: 30px;
     height: 30px;
     margin: 10px;
 }
-.taura-servico-arrow a:hover {
+.taura-link-box:hover {
     border-color: var(--theme-color) !important;
 }
-.taura-servico-arrow a:hover path {
+.taura-link-box:hover path {
     stroke: var(--theme-color) !important;
 }
+
+@media (min-width: 991px) {
+    .taura-list-cel:nth-child(1) {
+        max-width: 460px;
+    }
+    .taura-list-cel:nth-child(1) a {
+        display: none;
+    }
+}
+@media (max-width: 991px) {
+    .taura-list-cel:nth-child(1) {
+        padding-bottom: 20px;
+        justify-content: space-between;
+    }
+    .taura-list-cel:nth-child(3) {
+        display: none;
+    }
+}
+
 
 
 
 /* ***** BANNER HOME */
-.taura-banner .row {
-    margin-left: inherit;
-}
-
 .taura-banner .banner-wrap {
-    box-sizing: border-box;
+    padding: 60px 30px;
     display: flex;
     justify-content: center;
 }
 
-.taura-banner .banner-inner {
-    display: flex;
-    align-items: center;
-    padding: 60px 40px;
-}
+/* @media (min-width: 1200px) and (max-width: 1560px) {
+    .taura-banner .banner-inner {
+        width: 93.3333333333%;
+    }
+} */
 
 
 
@@ -218,6 +242,10 @@
     margin-top: -160px;
 }
 @media (max-width: 991px) {
+    .taura-space.imp .row {
+        flex-direction: column-reverse;
+    }
+
     .taura-space {
         text-align: center;
     }
@@ -245,6 +273,8 @@
 }
 
 .taura-metod .counter {
+    --taura-metod-padg: 3%;
+
     box-sizing: border-box;
     position: relative;
     padding-left: var(--taura-metod-padg);
@@ -381,6 +411,7 @@
 
 
 
+
 /* ***** BLOG */
 .breadcumb-wrapper.style2 {
     text-align: center;
@@ -392,6 +423,243 @@
     margin-bottom: 0;
 }
 
+.breadcumb-menu li:last-child {
+    font-weight: 600;
+}
+
+@media (max-width: 991px) {
+    .blog__inner-wrap > .row {
+        flex-direction: column-reverse;
+    }
+    .blog__sidebar {
+        margin-top: 0;
+    }
+    .sidebar__widget:not(.sidebar__widget-two) {
+        display: none;
+    }
+
+    .breadcumb-blog {
+        margin-top: 60px;
+    }
+}
+
+
+
+/* ***** TRABALHO */
+.taura-vagas {
+    padding-top: 60px;
+}
+.taura-trab-show .row {
+    gap: 30px;
+}
+
+.taura-vagas-title,
+.taura-trab-show-title {
+    font-size: 4.2em;
+    font-weight: normal;
+}
+.taura-vagas-title strong,
+.taura-trab-show-title strong {
+    font-weight: bold;
+}
+
+.taura-vagas .row {
+    gap: 30px;
+}
+
+.taura-vagas h3 {
+    font-weight: normal;
+    font-size: 20px;
+    color: var(--light-color);
+}
+
+.taura-vagas h4 {
+    font-weight: normal;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+
+.taura-mini-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.item-card {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+}
+.item-card:nth-child(2) {
+    position: relative;
+    padding: 0 20px;
+}
+.item-card:nth-child(2):before,
+.item-card:nth-child(2):after {
+    content: "";
+    width: 2px;
+    height: 70%;
+    background-color: var(--title-color);
+    position: absolute;
+}
+.item-card:nth-child(2):before {
+    right: 0;
+}
+.item-card:nth-child(2):after {
+    left: 0;
+}
+
+.taura-mini-cards .counter-number {
+    font-family: var(--title-font);
+    font-style: normal;
+}
+.taura-mini-cards .item-card span {
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.taura-mini-cards .item-card p {
+    font-size: 15px;
+    line-height: 120%;
+    padding-left: 20px;
+    margin: 0;
+}
+
+
+.taura-box-txt {
+    text-align: center;
+    font-weight: 600;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border: 2px solid var(--title-color);
+}
+
+.taura-anosimg {
+    position: relative;
+}
+.taura-anosimg > div {
+    background-color: var(--smoke-color);
+    overflow: hidden;
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+}
+.taura-anosimg > div:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 800px;
+    left: -10%;
+    top: -47%;
+    background-color: var(--theme-color);
+}
+.taura-anosimg > div > div {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    line-height: 100%;
+    
+    box-sizing: border-box;
+    width: 220px;
+    height: 220px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+.taura-anosimg > div span {
+    font-size: 95px;
+    font-weight: normal;
+    color: var(--smoke-color);
+    display: block;
+    padding: 60px 0 40px 0;
+    margin-bottom: 0;
+}
+
+
+.mx-6 {
+    max-width: 60%;
+}
+
+.center {
+    text-align: center;
+}
+
+.taura-tt-3 {
+    font-size: 42px;
+}
+.taura-tt-4 {
+    font-size: 36px;
+}
+
+
+.taura-process-card {
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+.taura-process-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+}
+.taura-process-card li {
+    padding: 15px;
+}
+.taura-process-card li div {
+    text-align: center;
+
+    min-height: 220px;
+    background-color: #fff;
+    padding: 70px 20px 20px 20px;
+}
+.taura-process-card h5 {
+    font-size: 15px;
+}
+.taura-process-card p {
+    font-size: 13px;
+}
+
+
+.taura-ul-g {
+    padding: 40px 0 0 0;
+    margin: 0;
+}
+.taura-ul-g ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.taura-ul-g li {
+    font-size: 18px;
+}
+.taura-ul-g li:not(:last-child) {
+    margin-bottom: 30px;
+}
+.taura-ul-g li:before {
+    box-sizing: border-box;
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-bottom: -8px;
+    margin-right: 10px;
+    background: url(../img/icon/icon-check.svg) no-repeat center;
+}
+
+@media (max-width: 991px) {
+    .taura-trab-beneficios .row > *:nth-child(1) {
+        padding-bottom: 60px;
+    }
+
+    .taura-trabalhe .contact-map {
+        display: none;
+    }
+}
+
+
 
 
 /* ***** CONTATO */
@@ -401,6 +669,39 @@
 
 .contact-map {
     z-index: 2;
+}
+
+.taura-field-border {
+    border-bottom: 2px solid var(--title-color);
+}
+
+.form-group:not(:last-child) {
+    margin-bottom: 50px;
+}
+
+.form-group select {
+    height: 53px;
+    padding: 0;
+}
+.form-group input[type="file"] {
+    padding: 0;
+}
+
+.taura-lgpd {
+    padding: 40px 0 0 0;
+    cursor: pointer;
+}
+.taura-lgpd input {
+    opacity: 1;
+    visibility: visible;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.trabalhe-form .row > div:not(:last-child) {
+    margin-bottom: 40px;
 }
 
 
