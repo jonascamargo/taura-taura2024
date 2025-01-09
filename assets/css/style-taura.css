@@ -3,6 +3,13 @@
     --smoke-color: #e9eaeb;
 
     /* --taura-metod-padg: 3%; */
+
+    /* ----- DARK THEME ----- */
+    --bg-dark: #202020;
+    --bg-deep-dark: #111111;
+    --theme-color-dark: #0f464b;
+    --smoke-color-dark: #272727;
+    --card-bg-dark: #3f3f3f;
 }
 
 /* * { outline: 4px solid rgba(255, 0, 190, 0.4); border-radius: 4px; } */
@@ -11,6 +18,10 @@
 /* ***** MAIN HEADER */
 .header-button {
     margin-left: 30px;
+}
+
+.header-logo {
+    max-width: 180px;
 }
 
 .select-lang {
@@ -104,8 +115,10 @@
 }
 
 
-.mobile-menu ul li a.btn {
-    color: var(--smoke-color);
+.mobile-menu ul li a.btn,
+.mobile-menu-area .social-btn.style3 a {
+    /* color: var(--smoke-color); */
+    color: var(--title-color) !important;
 }
 
 
@@ -126,7 +139,6 @@
 .taura-list-cel:nth-child(1) span {
     font-family: var(--title-font);
     font-weight: 40;
-    /* font-size: 110px; */
     font-size: calc(45px + (120 - 45) * ((100vw - 460px) / (1920 - 460)));
     color: #dcdedb;
     letter-spacing: -10px;
@@ -137,7 +149,6 @@
     padding: 0;
 }
 .taura-list-cel:nth-child(1) h3 {
-    /* font-size: 40px; */
     font-size: calc(24px + (36 - 24) * ((100vw - 460px) / (1920 - 460)));
 
     width: auto;
@@ -207,19 +218,12 @@
 
 
 
-
 /* ***** BANNER HOME */
 .taura-banner .banner-wrap {
     padding: 60px 30px;
     display: flex;
     justify-content: center;
 }
-
-/* @media (min-width: 1200px) and (max-width: 1560px) {
-    .taura-banner .banner-inner {
-        width: 93.3333333333%;
-    }
-} */
 
 
 
@@ -232,18 +236,15 @@
     border-radius: 0;
     height: 100%;
     width: 60px;
-}
-.taura-marcas .global-carousel .slick-arrow i {
-    display: none;
+    background-color: transparent;
 }
 .taura-marcas .global-carousel .slick-prev.slick-arrow {
     left: 0 !important;
-    background: url(../img/icon/taura-arrow-left.svg) no-repeat center;
 }
 .taura-marcas .global-carousel .slick-next.slick-arrow {
     right: 0 !important;
-    background: url(../img/icon/taura-arrow-right.svg) no-repeat center;
 }
+
 .taura-marcas .global-carousel .col-sm-6 {
     display: flex;
     justify-content: center;
@@ -334,7 +335,8 @@
     top: 0;
 }
 
-.taura-metod .counter img {
+.taura-metod .counter img,
+.taura-metod .counter svg {
     max-height: 80px;
     margin-bottom: 40px;
 }
@@ -743,4 +745,337 @@
 /* ***** FOOTER */
 .widget-contact {
     max-width: 340px;
+}
+
+
+.newsletter-form .btn,
+.blog-post-item {
+    background: none !important;
+}
+
+
+
+
+
+
+
+/* ================================================
+   ESTILO DARK
+================================================ */
+
+.dark-style body {
+    background: var(--bg-dark);
+}
+
+
+/* ==> titulos */
+.dark-style h1,
+.dark-style h2,
+.dark-style h3,
+.dark-style h4,
+.dark-style h5,
+.dark-style h6 {
+    color: var(--smoke-color);
+}
+
+
+/* ==> formulario */
+.dark-style select,
+.dark-style .single-select,
+.dark-style .form-control,
+.dark-style .form-select,
+.dark-style textarea,
+.dark-style input {
+    color: var(--smoke-color);
+}
+.dark-style textarea::placeholder,
+.dark-style input::placeholder {
+    color: #393939 !important;
+}
+
+.dark-style select option {
+    background: var(--bg-dark);
+}
+
+
+/* ==> menu principal */
+.dark-style .sticky-wrapper.header-sticky {
+    background-color: var(--bg-dark);
+}
+
+.dark-style .header-logo path {
+    fill: var(--smoke-color);
+}
+
+.dark-style .main-menu a {
+    color: var(--smoke-color);
+}
+.dark-style .main-menu > ul > li > a:hover {
+    color: var(--theme-color);
+}
+
+.dark-style .select-lang a {
+    color: var(--smoke-color);
+    border-color: var(--smoke-color);
+}
+.dark-style .select-lang a.select {
+    color: #181818;
+    background: var(--smoke-color);
+}
+.dark-style .select-lang a:hover {
+    color: var(--theme-color);
+    border-color: var(--theme-color);
+}
+
+.dark-style .header-button .search-btn {
+    color: var(--smoke-color);
+}
+.dark-style .header-button svg path {
+    stroke: var(--smoke-color);
+}
+
+
+/* ==> menu mobile */
+.dark-style .sidebar-btn {
+    border-color: var(--smoke-color);
+}
+.dark-style .sidebar-btn .line {
+    background-color: var(--smoke-color);
+}
+
+
+/* ==> rodapé principal */
+.dark-style .footer-wrapper {
+    background-color: var(--bg-deep-dark) !important;
+}
+
+.dark-style .footer-widget.widget_nav_menu a,
+.dark-style .widget-contact .contact-info-list li,
+.dark-style .widget-contact .contact-info-list li a,
+.dark-style .social-btn.style3 a {
+    color: var(--smoke-color);
+}
+.dark-style .widget-contact .contact-info-list li a:hover {
+    color: var(--theme-color);
+}
+
+.dark-style .newsletter-form .btn svg path {
+    stroke: var(--smoke-color);
+}
+
+.dark-style .newsletter-form .form-group input,
+.dark-style .footer-layout2 .copyright-wrap {
+    border-color: var(--smoke-color);
+}
+
+
+
+/* ==> botão voltar ao topo */
+.dark-style .scroll-top svg {
+    color: var(--theme-color);
+}
+.dark-style .scroll-top .progress-circle path {
+    stroke: var(--theme-color);
+}
+.dark-style .scroll-top:after {
+    color: var(--theme-color);
+}
+
+
+
+/* ==> links */
+.dark-style .link-btn {
+    color: var(--smoke-color);
+}
+.dark-style .link-btn:after,
+.dark-style .link-btn:before {
+    background-color: var(--smoke-color);
+}
+.dark-style .link-btn svg path {
+    stroke: var(--smoke-color);
+}
+
+
+.dark-style .taura-ul li a {
+    color: var(--smoke-color);
+}
+.dark-style .taura-ul li a:hover {
+    color: var(--theme-color);
+}
+
+
+/* ==> setas de navegação do carrossel / home */
+.dark-style .slick-arrow svg path {
+    stroke: var(--smoke-color);
+}
+
+
+.dark-style p,
+.dark-style .blog-card .blog-title a,
+.dark-style .blog-meta a,
+.dark-style .testi-box_profile .testi-box_name,
+.dark-style .blog-meta {
+    color: var(--smoke-color);
+}
+
+.dark-style .btn {
+    background-color: var(--smoke-color);
+    color: #181818;
+}
+
+
+.dark-style .bg-smoke {
+    background-color: #272727 !important;
+}
+
+.dark-style .bg-theme,
+.dark-style .marquee-wrap {
+    background-color: #0f464b !important;
+}
+.dark-style .bg-theme p,
+.dark-style .marquee-wrap .item.m-item {
+    color: var(--smoke-color);
+}
+
+
+
+/* ==> HOME / */
+.dark-style .counter-divider:after {
+    border-color: var(--smoke-color);
+}
+
+
+
+/* ==> SOBRE / icones da seção valores */
+.dark-style .taura-metod .counter svg {
+    fill: var(--smoke-color);
+}
+
+.dark-style .taura-metod .counter:not(:last-child):after {
+    background-color: var(--smoke-color);
+}
+
+
+
+/* ==> SERVICOS / */
+.dark-style .taura-link-box {
+    border-color: var(--smoke-color);
+}
+.dark-style .taura-link-box svg path {
+    stroke: var(--smoke-color);
+}
+
+.dark-style .taura-box-txt {
+    color: var(--smoke-color);
+    border-color: var(--smoke-color);
+}
+
+.dark-style .taura-ul-g li,
+.dark-style .taura-mini-cards .item-card span {
+    color: var(--smoke-color);
+}
+
+.dark-style .item-card:nth-child(2):before,
+.dark-style .item-card:nth-child(2):after {
+    background-color: var(--smoke-color);
+}
+
+.dark-style .taura-process-card li div {
+    background-color: #3f3f3f !important;
+}
+
+.dark-style .taura-anosimg > div:after {
+    background-color: #0f464b !important;
+}
+
+
+
+/* ==> CASES / */
+.dark-style .case-filter a,
+.dark-style .project-details-info .list-wrap li {
+    color: var(--smoke-color) !important;
+}
+
+
+
+/* ==> BLOG / */
+.dark-style .sidebar__search form input,
+.dark-style .blog__details-bottom {
+    color: var(--smoke-color);
+    border-bottom-color: var(--smoke-color);
+}
+.dark-style .sidebar__search form input::placeholder {
+    color: #393939 !important;
+}
+
+.dark-style .breadcumb-wrapper.style2 {
+    background-color: #272727 !important;
+}
+
+.dark-style .sidebar__search form button svg,
+.dark-style .sidebar__cat-list .list-wrap li a,
+.dark-style .sidebar__tag-list .list-wrap li a,
+.dark-style .blog-post-meta .list-wrap li,
+.dark-style .blog-post-meta .list-wrap li a,
+.dark-style .blog-post-content .title a,
+.dark-style .sidebar__post-content .title a,
+.dark-style .sidebar__post-content .date,
+.dark-style .blog__details-bottom .post-tags .list-wrap li a,
+.dark-style .inner__page-nav .nav-btn,
+
+.dark-style .breadcumb-menu li,
+.dark-style .breadcumb-menu a,
+.dark-style .breadcumb-menu span,
+.dark-style .breadcumb-menu li:after {
+    color: var(--smoke-color);
+}
+
+.dark-style .sidebar__tag-list .list-wrap li:not(:last-child):after,
+.dark-style .blog-post-meta .list-wrap li:not(:first-child):after,
+.dark-style .blog__details-bottom .post-tags .list-wrap li:not(:last-child):after {
+    background-color: var(--smoke-color);
+}
+
+.dark-style .blockquote-icon path {
+    fill: var(--smoke-color);
+}
+
+
+
+/* ==> CONTATO */
+.dark-style select.style-border,
+.dark-style .single-select.style-border,
+.dark-style .form-control.style-border,
+.dark-style .form-select.style-border,
+.dark-style textarea.style-border,
+.dark-style input.style-border {
+    border-bottom-color: var(--smoke-color);
+}
+
+.dark-style label,
+.dark-style .feature-card-title a {
+    color: var(--smoke-color);
+}
+
+.dark-style .feature-card {
+    background-color: #3f3f3f !important;
+}
+
+.dark-style .feature-card-icon path {
+    fill: var(--smoke-color);
+}
+
+
+
+/* ==> TRAVALHE / */
+.dark-style .taura-field-border {
+    border-bottom-color: var(--smoke-color);
+}
+
+
+.dark-style .accordion-card {
+    border-bottom-color: var(--smoke-color);
+}
+.dark-style .accordion-card .accordion-button {
+    color: var(--smoke-color);
 }

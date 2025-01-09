@@ -311,10 +311,10 @@
             verticalSwiping: d("vertical") ? true : false,
             prevArrow: d("prev-arrow")
                 ? prevButton
-                : '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
+                : '<button type="button" class="slick-prev"><svg width="40" height="35" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 34L38.5 34L26 17.5L38.5 1L13.5 0.999998L1 17.5L13.5 34Z" stroke="black"/></svg></button>',
             nextArrow: d("next-arrow")
                 ? nextButton
-                : '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
+                : '<button type="button" class="slick-next"><svg width="40" height="35" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M26 1H1L13.5 17.5L1 34H26L38.5 17.5L26 1Z" stroke="black"/></svg></button>',
             rtl: $("html").attr("dir") == "rtl" ? true : false,
             responsive: [
                 {
